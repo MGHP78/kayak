@@ -4,14 +4,24 @@ SEND_FILE_MAX_AGE_DEFAULT = 0 #vider le cache SECRET_KEY="maCleSuperSecurisee"
 #Configuration du serveur web
 WEB_SERVER = {
   "host": "localhost",
-  "port":8080,
+  "port":8081,
 }
 #Configuration du serveur de BDD
 DB_SERVER = {
-   "user": "root",
-   "password": "mysql",
+   "user": "admin",
+   "password": "admin",
    "host": "localhost",
-   "port": 8889,
-   "database": "ienac_cours",  #nom de la BDD
+   "port": 8889, #8889 mac 3306 windows
+   "database": "ienac_coavionnage_groupeB",  #nom de la BDD
    "raise_on_warnings": True
+}
+
+#couleur du texte dans terminal de vscode
+COLOR ={
+'header' : '\033[95m',
+'blue' : '\033[94m',
+'green' : '\033[92m',
+'orange' : '\033[93m',
+'red' : '\033[31m',
+'end' : '\033[0m',
 }
