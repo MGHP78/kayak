@@ -51,7 +51,11 @@
             </ul>
             <form>
               <button class="btn text-800 order-1 order-lg-0 me-2" type="button">Support</button>
+              {% if session['idUser'] %}
+              <button class="btn btn-voyage-outline order-0" type="submit"><span class="text-primary">Sign out</span></button>
+              {% else %}
               <button class="btn btn-voyage-outline order-0" type="submit"><span class="text-primary">Sign in</span></button>
+              {% endif %}
             </form>
           </div>
         </div>
@@ -221,6 +225,8 @@
       </section>
       <!-- <section> close ============================-->
         
+      {% include("/compte.html") %}
+      <a href="/login">Login</a>
       <!-- TEST BDD-->
 
         <table class="table">

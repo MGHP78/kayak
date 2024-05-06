@@ -1,8 +1,8 @@
 import mysql.connector
-from flask import session
-
-
+from flask import session, request
 from . import bddGen
+from .. import views
+
 # connexion au serveur de la base de données
  
 def close_bd(cursor,cnx):
@@ -54,3 +54,47 @@ def add_membreData(nom, prenom, mail, login, motPasse, statut,avatar):
     cnx.close()
     #dernier id créé = id du nouvel utilisateur
     return lastId
+
+<<<<<<< Updated upstream
+def update_membreData(champ, idUser, newvalue):
+    cnx = bddGen.connexion()
+    if cnx is None: return None
+    sql = " UPDATE identification SET "+champ+" = %s WHERE idUser = %s;"
+    param = (newvalue, idUser)
+    msg = { "success":"updateMembreOK"
+    ,
+    "error" : "Failed update membres data"
+    }
+    bddGen.updateData(cnx, sql, param, msg)
+    cnx.close()
+    return 1
+
+def updateNom():
+    # réception des données du formulaire
+    idUser = request.form['pk']
+    newvalue = request.form['value']
+    update_membreData("nom", idUser, newvalue)
+    return "1"
+
+def updateStatut():
+    # réception des données du formulaire
+    idUser = request.form['pk']
+    newvalue = request.form['value']
+    update_membreData("statut", idUser, newvalue)
+    return "1"
+
+=======
+def verifAuthData(login, mdp):
+    cnx = bddGen.connexion()
+    if cnx is None: return None
+    sql = "SELECT * FROM identification WHERE login=%s and motPasse=%s"
+    param=(login, mdp)
+    msg = {
+        "success":"authOK",
+        "error" : "Failed get Auth data"
+    }
+    # requête par fetchone
+    user = bddGen.selectOneData(cnx,sql,param,msg)
+    cnx.close()
+    return user
+>>>>>>> Stashed changes
