@@ -55,7 +55,6 @@ def add_membreData(nom, prenom, mail, login, motPasse, statut,avatar):
     #dernier id créé = id du nouvel utilisateur
     return lastId
 
-<<<<<<< Updated upstream
 def update_membreData(champ, idUser, newvalue):
     cnx = bddGen.connexion()
     if cnx is None: return None
@@ -83,7 +82,6 @@ def updateStatut():
     update_membreData("statut", idUser, newvalue)
     return "1"
 
-=======
 def verifAuthData(login, mdp):
     cnx = bddGen.connexion()
     if cnx is None: return None
@@ -97,4 +95,3 @@ def verifAuthData(login, mdp):
     user = bddGen.selectOneData(cnx,sql,param,msg)
     cnx.close()
     return user
->>>>>>> Stashed changes
