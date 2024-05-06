@@ -1,25 +1,16 @@
 import mysql.connector
 from flask import session
-from ..config import DB_SERVER, COLOR
-import myApp.model.bddGen as bddGen
+
+
+from . import bddGen
 # connexion au serveur de la base de données
-def connexion():
-    try:
-        cnx = mysql.connector.connect(**DB_SERVER)
-        print(COLOR['green'] + 'connexion BDD OK' + COLOR['end'])
-        return cnx
-    
-    except mysql.connector.Error as err: # problème
-        session['errorDB'] = format(err)
-        print(COLOR['red'] + session['errorDB'] + COLOR['end'])
-        return None
-    
+ 
 def close_bd(cursor,cnx):
     cursor.close()
     cnx.close()
     
 def get_membresData():
-    cnx = connexion()
+    cnx = bddGen.connexion()
     if cnx is None:
         return None
     
