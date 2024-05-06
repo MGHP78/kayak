@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
+import model.bdd as bdd
+import controller.function as f
 app = Flask(__name__) 
 app.template_folder = "template" 
 app.static_folder = "static" 
@@ -31,7 +33,7 @@ def addMembre():
     lastId = bdd.add_membreData(nom, prenom, mail,
     login, motPasse, statut, avatar)
     print(lastId) # dernier id créé par le serveur de BDD
-    
+
     if "errorDB" not in session:
         session["infoVert"]="Nouveau membre inséré"
     else:
