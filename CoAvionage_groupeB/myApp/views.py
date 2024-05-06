@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, session 
 from .model import bdd
 from .controller import function as f
-=======
 from flask import Flask, render_template, request, redirect, session
 import model.bdd as bdd
 import controller.function as f
