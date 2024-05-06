@@ -20,10 +20,10 @@ def index():
     }
     print(listeMembres)
     params = f.messageInfo(params)
-<<<<<<< HEAD
+
     return render_template("index.html",**params)
  
-=======
+
     return render_template("sgbd.html", **params)
 
 # ajout d'un membre
