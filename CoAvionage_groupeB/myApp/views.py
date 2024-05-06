@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+from flask import Flask, render_template, session 
+from .model import bdd
+from .controller import function as f
+=======
 from flask import Flask, render_template, request, redirect, session
 import model.bdd as bdd
 import controller.function as f
@@ -9,15 +14,16 @@ app.static_folder = "static"
 app.config.from_object('myApp.config')
 @app.route("/")
 def index():
-    return render_template("index.html")
-
-@app.route("/sgbd")
-def sgbd():
     listeMembres = bdd.get_membresData()
     params ={
         'liste':listeMembres
     }
+    print(listeMembres)
     params = f.messageInfo(params)
+<<<<<<< HEAD
+    return render_template("index.html",**params)
+ 
+=======
     return render_template("sgbd.html", **params)
 
 # ajout d'un membre

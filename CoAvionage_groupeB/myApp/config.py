@@ -2,6 +2,7 @@ ENV = "development"
 DEBUG = True
 SEND_FILE_MAX_AGE_DEFAULT = 0 #vider le cache SECRET_KEY="maCleSuperSecurisee"
 #Configuration du serveur web
+SECRET_KEY="kjhgkjfhkjh"
 WEB_SERVER = {
   "host": "localhost",
   "port":8081,
@@ -11,8 +12,8 @@ DB_SERVER = {
    "user": "admin",
    "password": "admin",
    "host": "localhost",
-   "port": 8889, #8889 mac 3306 windows
-   "database": "ienac_coavionnage_groupeB",  #nom de la BDD
+   "port": 3306, #8889 mac 3306 windows
+   "database": "ienac23_coavionage_groupeb",  #nom de la BDD
    "raise_on_warnings": True
 }
 
