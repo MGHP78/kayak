@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
-from flask import Flask, render_template, session, request, redirect
-from .model import bdd, bddGen
-=======
 from flask import Flask, render_template, session , request, redirect
 from .model import bdd
->>>>>>> Stashed changes
 from .controller import function as f
 import hashlib
 
@@ -51,27 +46,7 @@ def addMembre():
     return redirect("/sgbd")
 
 
-@app.route("/compte")
-def compte():
-    return render_template("compte.html")
 
-<<<<<<< Updated upstream
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-
-@app.route("/sgbd")
-def sgbd():
-    listeMembres = bdd.get_membresData()
-    params ={
-        'liste':listeMembres
-    }
-    print(listeMembres)
-    params = f.messageInfo(params)
-
-    return render_template("sgbd.html", **params)
-=======
 @app.route("/connecter", methods=["POST"])
 def connect():
     login = request.form['login']
@@ -101,11 +76,10 @@ def login():
     if session['statut']==0:
         return render_template("administrateur.html", **params)
     else:
-        return redirect("/")
+        return render_template("login.html", **params)
 
 @app.route("/logout")
 def logout():
     session.clear() # suppression de la session
     session["infoBleu"] = "Vous êtes déconnecté. Merci de votre visite"
     return redirect("/login")
->>>>>>> Stashed changes
