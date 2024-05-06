@@ -1,0 +1,26 @@
+<!--Affichage des messages provenant de la DB -->
+{% if errorDB %}
+    <div class="alert alert-danger text-center">
+        <h5 class="text-danger">Problème BDD</h5>
+        {{ errorDB }}
+    </div>
+{% endif %}
+
+<!--Affichage des messages provenant de views.py-->
+{% if infoRouge %}
+    <div class="alert alert-danger text-center">
+        {{ infoRouge }}
+    </div>
+{% endif %}
+
+{% if infoVert %}
+    <div class="alert alert-success text-center">
+        {{ infoVert }}
+    </div>
+{% endif %}
+
+{% if infoBleu %}
+    <div class="alert alert-primary text-center">
+        {{ infoBleu }}
+    </div>
+{% endif %}
