@@ -48,3 +48,18 @@ def del_membreData(idUser):
     }
     bddGen.deleteData(cnx, sql, param, msg)
     cnx.close()
+
+def add_membreData(nom, prenom, mail, login, motPasse, statut,avatar):
+    cnx = bddGen.connexion()
+    if cnx is None:
+        return None
+    sql = "INSERT INTO identification (nom, prenom, mail, login, motPasse, statut, avatar) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+    param = (nom, prenom, mail, login, motPasse, statut, avatar)
+    msg = {
+        "success":"addMembreOK",
+        "error" : "Failed add membres data"
+    }
+    lastId = bddGen.addData(cnx, sql, param, msg)
+    cnx.close()
+    #dernier id créé = id du nouvel utilisateur
+    return lastId

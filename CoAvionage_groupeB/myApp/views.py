@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session
 import model.bdd as bdd
 import controller.function as f
+import hashlib
+
 app = Flask(__name__) 
 app.template_folder = "template" 
 app.static_folder = "static" 
@@ -28,6 +30,8 @@ def addMembre():
     mail = request.form['mail']
     login = request.form['login']
     motPasse = request.form['mdp']
+    mdp = hashlib.sha256(motPasse.encode())
+    mdpC = mdp.hexdigest()
     statut = request.form['statut']
     avatar = request.form['avatar']
     lastId = bdd.add_membreData(nom, prenom, mail,
@@ -39,3 +43,6 @@ def addMembre():
     else:
         session["infoRouge"]="Problème ajout utilisateur"
     return redirect("/sgbd")
+
+
+
