@@ -1,0 +1,31 @@
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/">ENAC web</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="/"><img src="static/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active" href="/">Accueil</a></li>
+          <li><a href="/sgbd">SGBD</a></li>
+          <li><a href="/fichiers">Fichiers</a></li>
+          <li><a href="/#footer">Contact</a></li>
+          <li><a href="/login">Se connecter</a></li>
+        </ul>
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        {% if session["idUser"] %} {#Si la clé de session existe#}
+          <img class="rounded-circle mr-3" src="/static/img/avatar/{{ session['avatar']}}" alt="user">
+          <h5 class="pt-2"> {{ session.nom}} {{session.prenom}} </h5>
+        {% endif %}
+
+      </nav><!-- .navbar -->
+
+    
+
+    </div>
+  </header>

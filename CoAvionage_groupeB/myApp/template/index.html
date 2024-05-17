@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Coavionnage groupe b | Landing, Corporate &amp; Business Templatee</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicons/favicon.ico">
+    <link rel="manifest" href="/static/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="/static/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="/static/css/theme.css" rel="stylesheet" />
+
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img class="d-inline-block" src="/static/img/gallery/logo.png" width="50" alt="logo" /><span class="fw-bold text-primary ms-2">Coavionnage groupe b</span></a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
+              <li class="nav-item px-2"><a class="nav-link fw-medium active" aria-current="page" href="#destinations"><span class="nav-link-icon text-800 me-1 fas fa-map-marker-alt"></span><span class="nav-link-text">Locations </span></a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#flights"> <span class="nav-link-icon text-800 me-1 fas fa-plane"></span><span class="nav-link-text">Flights</span></a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#hotels"> <span class="nav-link-icon text-800 me-1 fas fa-hotel"></span><span class="nav-link-text">Hotels</span></a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#activities"><span class="nav-link-icon text-800 me-1 fas fa-bolt"></span><span class="nav-link-text">Activities</span></a></li>
+              {% if session['idUser'] %}
+                <li class="nav-item px-2"><a class="nav-link" href="/login"><span class="nav-link-icon text-800 me-1 fas fa-bolt"></span><span class="nav-link-text">Sign out</span></a></li>
+              {% else %}
+                <li class="nav-item px-2"><a class="nav-link" href="/login"><span class="nav-link-icon text-800 me-1 fas fa-bolt"></span><span class="nav-link-text">Sign in</span></a></li>
+              {% endif %}
+              {% if session['statut']==0 %}
+                <li class="nav-item px-2"><a class="nav-link" href="/administrateur"><span class="nav-link-icon text-800 me-1 fas fa-bolt"></span><span class="nav-link-text">administrateur</span></a></li>
+              {% endif %}
+              </ul>
+            
+          </div>
+        </div>
+      </nav>
+      <section class="mt-7 py-0">
+        <div class="bg-holder w-50 bg-right d-none d-lg-block" style="background-image:url(/static/img/gallery/hero-section-1.png);">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 py-5 py-xl-5 py-xxl-7">
+              <h1 class="display-3 text-1000 fw-normal">Let’s make a tour</h1>
+              <h1 class="display-3 text-primary fw-bold">Discover the beauty</h1>
+              <div class="pt-5">
+                <nav>
+                  <div class="nav nav-tabs voyage-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-map-marker-alt"></i></button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> <i class="fas fa-plane"></i></button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"> <i class="fas fa-hotel"></i></button>
+                  </div>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <form class="row g-4 mt-5">
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputAddress1">Address 1</label>
+                            <input class="form-control input-box form-voyage-control" id="inputAddress1" type="text" placeholder="From where" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputAddress2">Address 2</label>
+                            <input class="form-control input-box form-voyage-control" id="inputAddress2" type="text" placeholder="To where" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt"> </i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            <input class="form-control input-box form-voyage-control" id="inputdateOne" type="date" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            <input class="form-control input-box form-voyage-control" id="inputDateTwo" type="date" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-xl-5">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputPersonOne">Person</label>
+                            <select class="form-select form-voyage-select input-box" id="inputPersonOne">
+                              <option selected="selected">2 Adults</option>
+                              <option>2 Adults 1 children</option>
+                              <option>2 Adults 2 children</option>
+                            </select><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"> </i></span>
+                          </div>
+                        </div>
+                        <div class="col-12 col-xl-10 col-lg-12 d-grid mt-6">
+                          <button class="btn btn-secondary" type="submit">Search Packages</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                      <form class="row g-4 mt-5">
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputAddressThree">Address 1</label>
+                            <input class="form-control input-box form-voyage-control" id="inputAddressThree" type="text" placeholder="From where" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputAddressFour">Address 2</label>
+                            <input class="form-control input-box form-voyage-control" id="inputAddressFour" type="text" placeholder="To where" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-map-marker-alt"> </i></span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <input class="form-control input-box form-voyage-control" id="inputDateThree" type="date" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <input class="form-control input-box form-voyage-control" id="inputDateFour" type="date" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputPeopleTwo">People</label>
+                            <select class="form-select form-voyage-select input-box" id="inputPeopleTwo">
+                              <option selected="selected">2 Adults</option>
+                              <option>2 Adults 1 children</option>
+                              <option>2 Adults 2 children</option>
+                            </select><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"> </i></span>
+                          </div>
+                        </div>
+                        <div class="col-12 d-grid mt-6">
+                          <button class="btn btn-secondary" type="submit">Search Packages</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                      <form class="row g-4 mt-5">
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <input class="form-control input-box form-voyage-control" id="inputDateFive" type="date" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <input class="form-control input-box form-voyage-control" id="inputDateSix" type="date" /><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-calendar"></i></span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="input-group-icon">
+                            <label class="form-label visually-hidden" for="inputPeopleThree">Person</label>
+                            <select class="form-select form-voyage-select input-box" id="inputPeopleThree">
+                              <option selected="selected">2 Adults</option>
+                              <option>2 Adults 1 children</option>
+                              <option>2 Adults 2 children</option>
+                            </select><span class="nav-link-icon text-800 fs--1 input-box-icon"><i class="fas fa-user"> </i></span>
+                          </div>
+                        </div>
+                        <div class="col-12 d-grid mt-6">
+                          <button class="btn btn-secondary" type="submit">Search Packages</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0 overflow-hidden">
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 px-0"><img class="img-fluid order-md-0 mb-4 h-100 fit-cover" src="/static/img/gallery/hero-section-2.png" alt="..." /></div>
+            <div class="col-lg-6 px-0 bg-primary-gradient bg-offcanvas-right">
+              <div class="mx-6 mx-xl-8 my-8">
+                <div class="align-items-center d-block d-flex mb-5"><img class="img-fluid me-3 me-md-2 me-lg-4" src="/static/img/icons/locations.png" alt="..." />
+                  <div class="flex-1 align-items-center pt-2">
+                    <h5 class="fw-bold text-light">Visit the greatest places</h5>
+                  </div>
+                </div>
+                <div class="align-items-center d-block d-flex mb-5"><img class="img-fluid me-3 me-md-2 me-lg-4" src="/static/img/icons/schedule.png" alt="..." />
+                  <div class="flex-1 align-items-center pt-2">
+                    <h5 class="fw-bold text-light">Make your own plans.</h5>
+                  </div>
+                </div>
+                <div class="align-items-center d-block d-flex mb-5"><img class="img-fluid me-3 me-md-2 me-lg-4" src="/static/img/icons/save.png" alt="..." />
+                  <div class="flex-1 align-items-center pt-2">
+                    <h5 class="fw-bold text-light">Save 50% on your next trip</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ajout membre-->
+        <form method="post" action="/addMembre">
+          <h4>S'enregistrer</h4>
+          <input type="text" name="nom" required>
+          <input type="text" name="prenom" required>
+          <input type="email" name="mail" required>
+          <input type="text" name="login" required>
+          <input type="password" name="mdp" required>
+          <input type="radio" name="statut" value="1" checked /> Gestionnaire
+          <input type="radio" name="statut" value="0"> Administrateur
+          
+          <h5>Choisissez un avatar</h5>
+          {% for i in range(1,13) %}
+              <input type="radio" name="avatar" value="{{i}}.png">
+              <img src="/static/img/avatar/{{i}}.png" />
+          {% endfor %}
+          <button type="submit">Enregistrerrr</button>
+      </form>
+      
+      <!-- TEST BDD-->
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Supp</th>
+              <th>Avatar</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Mail</th>
+              <th>Login</th>
+              <th>Statuttttt</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+          {% if liste and liste is not none %}
+            {% for user in liste %}
+              <tr>
+                <td>
+                  <a href="/suppMembre/{{user.idUser}}">
+                    <i class='fa-solid fa-trash-can text-danger'></i></td>
+                  </a>
+                <td><img src="/static/img/avatar/{{ user.avatar }}" /></td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.mail }}</td>
+                <td>{{ user.login }}</td>
+                <td>
+                  {% if user.statut == 0 %}
+                    Administrateur
+                  {% else %}
+                    Gestionnaire
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          {% endif %}
+        </tbody>
+        </table>
+        
+        <!-- TEST BDD-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0 pb-8">
+
+        <div class="container-fluid container-lg">
+          <div class="row h-100 g-2 justify-content-center">
+            <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
+              <div class="card card-span text-white h-100"><img class="img-card h-100" src="/static/img/gallery/blog-1.png" alt="..." />
+                <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
+                  <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto"><img src="/static/img/gallery/author-1.png" width="60" alt="..." />
+                    <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i class="fas fa-heart text-primary"></i><span class="text-900 ms-2">355</span></span><span class="text-900 text-center"><i class="fas fa-eye text-primary"></i><span class="text-900 ms-2">234</span></span><span class="text-900 text-center"><i class="fas fa-share text-primary"></i><span class="text-900 ms-2">14</span></span></div>
+                  </div>
+                  <h5 class="text-900 mt-3">John Oliver. <span class="fw-normal">5 mins Read. </span></h5>
+                  <h3 class="fw-bold text-1000 mt-5 text-truncate">15 Best Day Trips from Portland Oregon</h3>
+                  <p class="text-900 mt-3">The structure of the trip blog is only a white canvas to highlight the atmospheric and immersive.</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
+                    <svg class="bi bi-arrow-right-short hover-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
+              <div class="card card-span text-white h-100"><img class="img-card h-100" src="/static/img/gallery/blog-2.png" alt="..." />
+                <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
+                  <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto"><img src="/static/img/gallery/author-2.png" width="60" alt="..." />
+                    <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i class="fas fa-heart text-primary"></i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i class="fas fa-eye text-primary"></i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i class="fas fa-share text-primary"></i><span class="text-900 ms-2">14</span></span></div>
+                  </div>
+                  <h5 class="text-900 mt-3">Haley Wilson . <span class="fw-normal">5 mins Read. </span></h5>
+                  <h3 class="fw-bold text-1000 mt-5 text-truncate">Famous Roads for Great Drives in California</h3>
+                  <p class="text-900 mt-3">I first discovered about famous road in california when I flew with KLM to Europe in 2018.</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
+                    <svg class="bi bi-arrow-right-short hover-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-9 col-md-4 mb-3 mb-md-0 h-100">
+              <div class="card card-span text-white h-100"><img class="img-card h-100" src="/static/img/gallery/blog-3.png" alt="..." />
+                <div class="card-body px-xl-5 px-md-3 pt-0 pb-7">
+                  <div class="d-flex justify-content-between align-items-center bg-100 mt-n5 me-auto"><img src="/static/img/gallery/author-3.png" width="60" alt="..." />
+                    <div class="d-flex flex-1 justify-content-around"> <span class="text-900 text-center"><i class="fas fa-heart text-primary"></i><span class="text-900 ms-2">35</span></span><span class="text-900 text-center"><i class="fas fa-eye text-primary"></i><span class="text-900 ms-2">23</span></span><span class="text-900 text-center"><i class="fas fa-share text-primary"></i><span class="text-900 ms-2">14</span></span></div>
+                  </div>
+                  <h5 class="text-900 mt-3">Jeff Baley. <span class="fw-normal">5 mins Read. </span></h5>
+                  <h3 class="fw-bold text-1000 mt-5 text-truncate">7 of the Best Train Trips in Canada</h3>
+                  <p class="text-900 mt-3">On this very stunning rail ride from Vancouver to Calgary, take in the stunning vistas andspectacular.</p><a class="btn btn-lg text-900 fs-1 px-0 hvr-icon-forward" href="#!" role="button">Read more
+                    <svg class="bi bi-arrow-right-short hover-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"> </path>
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0" id="flights">
+
+        <div class="container-fluid">
+          <div class="row h-100">
+            <div class="col-lg-7 mx-auto text-center mb-6">
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Flights to Popular Places at the Best Costs</h5>
+            </div>
+          </div>
+          <div class="row g-0 flex-center">
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#240D8C; min-height:230px; ">
+                <h5 class="text-light">Dhaka - Chittagong</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#3011BB; min-height:230px;">
+                <h5 class="text-light">Dhaka - Sylhet</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#4914DC; min-height:230px;">
+                <h5 class="text-light">Dhaka - Chittagong</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#6213D2; min-height:230px;">
+                <h5 class="text-light">Dhaka - Chittagong</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#4611BC; min-height:230px;">
+                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#7013CE; min-height:230px;">
+                <h5 class="text-light">Dhaka - Sylhet</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#4611BC; min-height:230px;">
+                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#6213D2; min-height:230px;">
+                <h5 class="text-light">Dhaka - Chittagong</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#240D8C; min-height:230px;">
+                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#4914DC; min-height:230px;">
+                <h5 class="text-light">Dhaka - Sylhet</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#3011BB; min-height:230px;">
+                <h5 class="text-light">Dhaka - Chittagong</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3 col-lg-4 col-xl-2">
+              <div class="d-flex flex-column justify-content-center px-3" style="background-color:#4611BC; min-height:230px;">
+                <h5 class="text-light">Dhaka - Coxs Bazar</h5>
+                <h6 class="text-light fw-normal fs-0">From $100</h6><i class="fas fa-arrow-right text-light mt-4"></i><a class="stretched-link" href="#!"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <section>
+        <div class="bg-holder" style="background-image:url(/static/img/gallery/cta-bg.png);background-position:center;background-size:cover;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row flex-center">
+            <div class="col-lg-6 text-center"><img class="mb-5 mb-lg-0" src="/static/img/gallery/cta-mobile.png" alt="..." /></div>
+            <div class="col-lg-6 text-center">
+              <h1 class="fs-6 pe-xxl-10">Get the app</h1>
+              <div class="mt-4 pe-xxl-10"><a href="https://play.google.com/store/apps" target="_blank"><img class="me-3" src="/static/img/gallery/google-play.png" width="170" alt="..." /></a><a href="https://www.apple.com/app-store/" target="_blank"> <img src="/static/img/gallery/app-store.png" width="170" alt="..." /></a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0 overflow-hidden">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-6 col-sm-4 col-lg-6">
+              <div class="py-7"><img class="d-inline-block" src="/static/img/gallery/logo.png" width="50" alt="logo" /><span class="fw-bold fs-4 text-primary ms-2">voyage</span>
+                <ul class="list-unstyled mt-4">
+                  <li class="mb-2"><a class="text-800 fw-bold text-decoration-none" href="#!">News</a></li>
+                  <li class="mb-2"><a class="text-800 fw-bold text-decoration-none" href="#!">Terms &amp; Conditions</a></li>
+                  <li class="mb-2"><a class="text-800 fw-bold text-decoration-none" href="#!">Privacy</a></li>
+                  <li class="mb-2"><a class="text-800 fw-bold text-decoration-none" href="#!">About Us</a></li>
+                  <li class="mb-2"><a class="text-800 fw-bold text-decoration-none" href="#!">FAQs</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6 col-8 col-lg-6 bg-primary-gradient bg-offcanvas-right">
+              <div class="p-3 py-7 p-md-7">
+                <p class="text-light"><i class="fas fa-phone-alt me-3"></i><span class="text-light">+3930219390</span></p>
+                <p class="text-light"><i class="fas fa-envelope me-3"></i><span class="text-light">something@gmail.com</span></p>
+                <p class="text-light"><i class="fas fa-map-marker-alt me-3"></i><span class="text-light lh-lg">333, Lorem Street, Albania, Alifornia<br/>United States of America</span></p>
+                <div class="mt-6"><a href="#!"> <img class="me-3" src="/static/img/icons/facebook.svg" alt="..." /></a><a href="#!"> <img class="me-3" src="/static/img/icons/twitter.svg" alt="..." /></a><a href="#!"> <img class="me-3" src="/static/img/icons/instagram.svg" alt="..." /></a></div>
+                <p class="mt-3 text-light text-center text-md-start"> Made with&nbsp;
+                  <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#EB6453" viewBox="0 0 16 16">
+                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                  </svg>&nbsp;by&nbsp;<a class="text-light" href="https://themewagon.com/" target="_blank">ThemeWagon </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="/static/vendors/@popperjs/popper.min.js"></script>
+    <script src="/static/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/static/vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="/static/vendors/fontawesome/all.min.js"></script>
+    <script src="/static/js/theme.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>
