@@ -31,10 +31,7 @@
         <!--    Stylesheets-->
         <!-- ===============================================-->
         <link href="/static/css/theme.css" rel="stylesheet" />
-        <link href="/static/css/my.css" rel="stylesheet" />
     
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-edi
-        table/css/bootstrap-editable.css" />
       </head>
 
 <body>
@@ -67,53 +64,49 @@
               
             </div>
           </div>
-        </nav>
+        </nav> 
   <!-- ======= Header ======= -->
   
 
   <main id="main">
     <section id="admnistrateur" class="contact">
         <div class="container">
-    {# liste #}
-    <table class="table">
-        <thead>
-        <tr>
-          <th>Supp</th>
-          <th>Avatar</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Mail</th>
-          <th>Login</th>
-          <th>Statut</th>
-        </tr>
-        </thead>
-    
-      <tbody>
-      {% if liste and liste is not none %}
-        {% for user in liste %}
-          <tr>
-            <td>
-              <a href="/suppMembre/{{user.idUser}}">
-                <i class='fa-solid fa-trash-can text-danger'></i></td>
-              </a>
-            <td><img src="/static/img/avatar/{{ user.avatar }}" /></td>
-            <td class='modif' data-url = '/updateNom' data-pk='{{user.idUser}}' > {{ user.nom }}</td>
-            <td>{{ user.prenom }}</td>
-            <td>{{ user.mail }}</td>
-            <td>{{ user.login }}</td>
-            <td class='modifSelect' data-url = '/updateStatut'
-            data-pk='{{user.idUser}}'>
-            {% if user.statut == 0 %}
-                Administrateur
-            {% else %}
-                Gestionnaire
-            {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      {% endif %}
-    </tbody>
-    </table>
+            <table class="table">
+                <thead>
+                <tr>
+                  <th>Supp</th>
+                  <th>Avatar</th>
+                  <th>Nom</th>
+                  <th>Prénom</th>
+                  <th>Mail</th>
+                  <th>Mot de Passe</th>
+                  <th>Statut</th>
+                </tr>
+                </thead>
+            
+            <tbody>
+            <tr>
+                <td>
+                  <a href="/suppMembre/{{session["idUser"]}}">
+                    <i class='fa-solid fa-trash-can text-danger'></i></td>
+                  </a>
+                <td><img src="/static/img/avatar/{{ session["avatar"] }}" /></td>
+                <td>{{ session["nom"]}}</td>
+                <td>{{ session["prenom"] }}</td>
+                <td>{{ session["mail"] }}</td>
+                <td>{{ session["motPasse"] }}</td>
+                <td>
+                    {% if session["statut"] == 0 %}
+                      Administrateur
+                    {% else %}
+                      Gestionnaire
+                    {% endif %}
+                  </td>
+            </tr>
+        </tbody>
+        </table>
+
+
     </div>
     </section>
 
@@ -125,27 +118,5 @@
   
 
 </body>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstr
-ap-editable.min.js"></script>
-
-
-<script> 
-    const $ = jQuery.noConflict(); 
-    jQuery(function() {
-        $.fn.editable.defaults.mode = 'inline'
-        $(".modif").editable()
-        $(".modifSelect").editable({
-            type: 'select',
-            source: [
-                {value: 1, text: 'Gestionnaire'},
-                {value: 0, text: 'Administrateur'}
-            ]
-        })
-   })
-   </script>
-
 
 </html>

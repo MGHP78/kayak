@@ -1,0 +1,14 @@
+.glyphicon:before{
+    font-size:1.4em;
+    font-style: normal;
+    }
+    .glyphicon-ok:before {
+    content: "x"; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    }
+    .glyphicon-remove:before {
+    content: "v";   
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    }

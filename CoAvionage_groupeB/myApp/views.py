@@ -65,6 +65,7 @@ def connect():
         session["mail"] = user["mail"]
         session["statut"] = user["statut"]
         session["avatar"] = user["avatar"]
+        session["motdepasse"] = user["motPasse"]
         session["infoVert"] = "Authentification réussie"
         return redirect("/")
     except TypeError as err:
@@ -125,3 +126,25 @@ def administrateur():
     params = { 'liste': listeMembres }
     params = f.messageInfo(params)
     return render_template("administrateur.html", **params)
+
+
+@app.route("/user")
+def user():
+    params = f.messageInfo()
+    return render_template("user.html", **params)
+
+
+@app.route("/updateNom", methods=['POST'])
+def updateNom():
+    # réception des données du formulaire
+    idUser = request.form['pk']
+    newvalue = request.form['value']
+    bdd.update_membreData("nom", idUser, newvalue)
+    return "1"
+@app.route("/updateStatut", methods=['POST'])
+def updateStatut():
+    # réception des données du formulaire
+    idUser = request.form['pk']
+    newvalue = request.form['value']
+    bdd.update_membreData("statut", idUser, newvalue)
+    return "1"
