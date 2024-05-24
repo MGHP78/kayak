@@ -1,0 +1,39 @@
+{# liste #}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Supp</th>
+      <th>Avatar</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Mail</th>
+      <th>Login</th>
+      <th>Statut</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% if liste and liste is not none %}
+    {% for user in liste %}
+      <tr>
+        <td>
+          <a href="/suppMembre/{{user.idUser}}">
+            <i class='fa-solid fa-trash-can text-danger'></i></td>
+          </a>
+        <td><img src="/static/img/avatar/{{ user.avatar }}" /></td>
+        <td>{{ user.nom }}</td>
+        <td>{{ user.prenom }}</td>
+        <td>{{ user.mail }}</td>
+        <td>{{ user.login }}</td>
+        <td>
+          {% if user.statut == 0 %}
+            Administrateur
+          {% else %}
+            Gestionnaire
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</tbody>
+</table>
