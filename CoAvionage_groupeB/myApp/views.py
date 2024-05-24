@@ -26,6 +26,12 @@ def login():
     params = f.messageInfo()
     return render_template("login.html", **params)
 
+# page contact
+@app.route("/contact")
+def login():
+    params = f.messageInfo()
+    return render_template("contact.html", **params)
+
 # page sgbd
 @app.route("/sgbd")
 def sgbd():
