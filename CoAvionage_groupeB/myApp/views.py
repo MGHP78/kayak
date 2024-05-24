@@ -155,3 +155,4 @@ def updateStatut():
     newvalue = request.form['value']
     bdd.update_membreData("statut", idUser, newvalue)
     return "1"
+
