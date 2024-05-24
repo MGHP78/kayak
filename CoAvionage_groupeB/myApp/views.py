@@ -65,7 +65,7 @@ def connect():
         session["mail"] = user["mail"]
         session["statut"] = user["statut"]
         session["avatar"] = user["avatar"]
-        session["motdepasse"] = user["motPasse"]
+        session["motdepasse"] = mdp
         session["infoVert"] = "Authentification réussie"
         return redirect("/")
     except TypeError as err:

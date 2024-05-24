@@ -31,7 +31,9 @@
         <!--    Stylesheets-->
         <!-- ===============================================-->
         <link href="/static/css/theme.css" rel="stylesheet" />
-    
+        <link href="/static/css/my.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-edi
+        table/css/bootstrap-editable.css" />
       </head>
 
 <body>
@@ -91,10 +93,10 @@
                     <i class='fa-solid fa-trash-can text-danger'></i></td>
                   </a>
                 <td><img src="/static/img/avatar/{{ session["avatar"] }}" /></td>
-                <td>{{ session["nom"]}}</td>
-                <td>{{ session["prenom"] }}</td>
-                <td>{{ session["mail"] }}</td>
-                <td>{{ session["motPasse"] }}</td>
+                <td class='modif' data-url = '/updateNom' data-pk='{{session["nom"]}}' > {{ session["nom"] }}</td>
+                <td class='modif' data-url = '/updateNom' data-pk='{{session["prenom"]}}' > {{ session["prenom"] }}</td>
+                <td class='modif' data-url = '/updateNom' data-pk='{{session["mail"]}}' > {{ session["mail"] }}</td>
+                <td class='modif' data-url = '/updateNom' data-pk='{{session["motdepasse"]}}' > {{ session["motdepasse"] }}</td>
                 <td>
                     {% if session["statut"] == 0 %}
                       Administrateur
@@ -118,5 +120,23 @@
   
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstr
+ap-editable.min.js"></script>
 
+
+<script> 
+    const $ = jQuery.noConflict(); 
+    jQuery(function() {
+        $.fn.editable.defaults.mode = 'inline'
+        $(".modif").editable()
+        $(".modifSelect").editable({
+            type: 'select',
+            source: [
+                {value: 1, text: 'Gestionnaire'},
+                {value: 0, text: 'Administrateur'}
+            ]
+        })
+   })
+   </script>
 </html>
