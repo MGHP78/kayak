@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `IENAC23_coavionage_groupeB`
 --
-CREATE DATABASE IF NOT EXISTS `ienac_coavionage_groupeB` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ienac_coavionage_groupeB`;
+CREATE DATABASE IF NOT EXISTS `IENAC23_coavionage_groupeB` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `IENAC23_coavionage_groupeB`;
 
 -- --------------------------------------------------------
 
