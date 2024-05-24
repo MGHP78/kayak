@@ -8,7 +8,7 @@
     font-weight: 900;
     }
     .glyphicon-remove:before {
-    content: "v";   
+    content: "v";    #\f00d
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     }
