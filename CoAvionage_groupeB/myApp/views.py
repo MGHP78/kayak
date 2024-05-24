@@ -20,6 +20,13 @@ def index():
     params = f.messageInfo()
     return render_template("index.html", **params)
 
+# page faq
+@app.route("/faq")
+def faq(): 
+    params = f.messageInfo()
+    return render_template("faq.html", **params)
+
+
 # page se connecter
 @app.route("/login")
 def login():
