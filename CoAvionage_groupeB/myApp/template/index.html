@@ -239,7 +239,7 @@
           
           <h5>Choisissez un avatar</h5>
           {% for i in range(1,13) %}
-              <input type="radio" name="avatar" value="{{i}}.png">
+              <input type="radio" name="avatar" value="{{i}}.png" required>
               <img src="/static/img/avatar/{{i}}.png" />
           {% endfor %}
           <button type="submit">Enregistrer</button>
