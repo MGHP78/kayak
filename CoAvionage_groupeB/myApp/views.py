@@ -4,6 +4,7 @@ from .controller import function as f
 from werkzeug.utils import secure_filename
 import pandas, os
 from openpyxl import Workbook
+import hashlib
 
 app = Flask(__name__)
 
@@ -93,9 +94,11 @@ def addMembre():
     mail = request.form['mail']
     login = request.form['login']
     motPasse = request.form['mdp']
+    motPasse = hashlib.sha256(motPasse.encode())
+    motPassechiffre = motPasse.hexdigest()
     statut = request.form['statut']
     avatar = request.form['avatar']
-    lastId = bdd.add_membreData(nom, prenom, mail, login, motPasse, statut, avatar)
+    lastId = bdd.add_membreData(nom, prenom, mail, login, motPassechiffre, statut, avatar)
     print(lastId)  # dernier id créé par la BDD
     if "errorDB" not in session:    
         session["infoVert"] = "Nouveau membre inséré"
