@@ -96,7 +96,7 @@ def addMembre():
     motPasse = request.form['mdp']
     motPasse = hashlib.sha256(motPasse.encode())
     motPassechiffre = motPasse.hexdigest()
-    statut = 0
+    statut = 1
     avatar = request.form['avatar']
     lastId = bdd.add_membreData(nom, prenom, mail, login, motPassechiffre, statut, avatar)
     print(lastId)  # dernier id créé par la BDD
@@ -117,3 +117,11 @@ def updateMembre(champ=None):
     if champ == "S":
         bdd.update_membreData("statut", idUser, newvalue)
     return "1"
+
+
+@app.route("/administrateur")
+def administrateur():
+    listeMembres = bdd.get_membresData()
+    params = { 'liste': listeMembres }
+    params = f.messageInfo(params)
+    return render_template("administrateur.html", **params)
