@@ -96,7 +96,7 @@ def addMembre():
     motPasse = request.form['mdp']
     motPasse = hashlib.sha256(motPasse.encode())
     motPassechiffre = motPasse.hexdigest()
-    statut = request.form['statut']
+    statut = 0
     avatar = request.form['avatar']
     lastId = bdd.add_membreData(nom, prenom, mail, login, motPassechiffre, statut, avatar)
     print(lastId)  # dernier id créé par la BDD
