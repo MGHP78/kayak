@@ -105,7 +105,7 @@ def addMembre():
         session["infoVert"] = "Nouveau membre inséré"
     else:
         session["infoRouge"] = "Problème ajout utilisateur"
-    return redirect("/")
+    return redirect("/enregistrement")
 
 
 # Mise à jour du nom et du statut d'un membre
@@ -126,6 +126,13 @@ def administrateur():
     params = { 'liste': listeMembres }
     params = f.messageInfo(params)
     return render_template("administrateur.html", **params)
+
+@app.route("/enregistrement")
+def enregistrement():
+    listeMembres = bdd.get_membresData()
+    params = { 'liste': listeMembres }
+    params = f.messageInfo(params)
+    return render_template("enregistrement.html", **params)
 
 
 @app.route("/user")
